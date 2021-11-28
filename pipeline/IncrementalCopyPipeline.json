@@ -103,7 +103,7 @@
 			}
 		],
 		"parameters": {
-			"triggerStartTime ": {
+			"triggerStartTime": {
 				"type": "string",
 				"defaultValue": "2021-11-28 21:10:00.000"
 			},
