@@ -39,7 +39,7 @@
 					},
 					"ifTrueActivities": [
 						{
-							"name": "Wait1",
+							"name": "DoSomething",
 							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
