@@ -94,7 +94,13 @@
 							"outputs": [
 								{
 									"referenceName": "DelimitedText1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"triggerStart": {
+											"value": "@pipeline().parameters.triggerStartTime",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
