@@ -5,24 +5,11 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"triggerStart": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat(formatDateTime(dataset().triggerStart,'yyyyMMddHHmmssfff'),'.csv')",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@concat('customers/incremental/',formatDateTime(dataset().triggerStart,'yyyy/MM/dd'))",
-					"type": "Expression"
-				},
 				"container": "adfcdc"
 			},
 			"columnDelimiter": ",",
