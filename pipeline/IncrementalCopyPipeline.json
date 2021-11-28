@@ -102,6 +102,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"triggerStartTime ": {
+				"type": "string",
+				"defaultValue": "2021-11-28 21:10:00.000"
+			},
+			"triggerEndTime": {
+				"type": "string",
+				"defaultValue": "2021-11-28 23:10:00.000"
+			}
+		},
 		"annotations": []
 	}
 }
