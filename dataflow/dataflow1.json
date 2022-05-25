@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "linkedService1",
-						"type": "LinkedServiceReference"
+					"dataset": {
+						"referenceName": "AzureSQLCDCCustomers",
+						"type": "DatasetReference"
 					},
 					"name": "source1"
 				}
@@ -15,13 +15,23 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          {__$start_lsn} as binary,",
+				"          {__$end_lsn} as binary,",
+				"          {__$seqval} as binary,",
+				"          {__$operation} as integer,",
+				"          {__$update_mask} as binary,",
+				"          customer_id as integer,",
+				"          first_name as string,",
+				"          last_name as string,",
+				"          email as string,",
+				"          city as string,",
+				"          {__$command_id} as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     format: 'table',",
-				"     store: 'sqlserver',",
-				"     schemaName: '',",
-				"     tableName: '',",
-				"     isolationLevel: 'READ_UNCOMMITTED') ~> source1"
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1"
 			]
 		}
 	}

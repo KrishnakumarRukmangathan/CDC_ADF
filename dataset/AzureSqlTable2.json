@@ -1,0 +1,280 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CustomerID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NameStyle",
+				"type": "bit"
+			},
+			{
+				"name": "Title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FirstName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MiddleName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Suffix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CompanyName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SalesPerson",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EmailAddress",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PasswordHash",
+				"type": "varchar"
+			},
+			{
+				"name": "PasswordSalt",
+				"type": "varchar"
+			},
+			{
+				"name": "rowguid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "description1",
+				"type": "varchar"
+			},
+			{
+				"name": "description2",
+				"type": "varchar"
+			},
+			{
+				"name": "description3",
+				"type": "varchar"
+			},
+			{
+				"name": "description4",
+				"type": "varchar"
+			},
+			{
+				"name": "description5",
+				"type": "varchar"
+			},
+			{
+				"name": "description6",
+				"type": "varchar"
+			},
+			{
+				"name": "description7",
+				"type": "varchar"
+			},
+			{
+				"name": "description8",
+				"type": "varchar"
+			},
+			{
+				"name": "description9",
+				"type": "varchar"
+			},
+			{
+				"name": "description10",
+				"type": "varchar"
+			},
+			{
+				"name": "description11",
+				"type": "varchar"
+			},
+			{
+				"name": "description12",
+				"type": "varchar"
+			},
+			{
+				"name": "description13",
+				"type": "varchar"
+			},
+			{
+				"name": "description14",
+				"type": "varchar"
+			},
+			{
+				"name": "description15",
+				"type": "varchar"
+			},
+			{
+				"name": "description16",
+				"type": "varchar"
+			},
+			{
+				"name": "description17",
+				"type": "varchar"
+			},
+			{
+				"name": "description18",
+				"type": "varchar"
+			},
+			{
+				"name": "description19",
+				"type": "varchar"
+			},
+			{
+				"name": "description20",
+				"type": "varchar"
+			},
+			{
+				"name": "description21",
+				"type": "varchar"
+			},
+			{
+				"name": "description22",
+				"type": "varchar"
+			},
+			{
+				"name": "description23",
+				"type": "varchar"
+			},
+			{
+				"name": "description24",
+				"type": "varchar"
+			},
+			{
+				"name": "description25",
+				"type": "varchar"
+			},
+			{
+				"name": "description26",
+				"type": "varchar"
+			},
+			{
+				"name": "description27",
+				"type": "varchar"
+			},
+			{
+				"name": "description28",
+				"type": "varchar"
+			},
+			{
+				"name": "description29",
+				"type": "varchar"
+			},
+			{
+				"name": "description30",
+				"type": "varchar"
+			},
+			{
+				"name": "description31",
+				"type": "varchar"
+			},
+			{
+				"name": "description32",
+				"type": "varchar"
+			},
+			{
+				"name": "description33",
+				"type": "varchar"
+			},
+			{
+				"name": "description34",
+				"type": "varchar"
+			},
+			{
+				"name": "description35",
+				"type": "varchar"
+			},
+			{
+				"name": "description36",
+				"type": "varchar"
+			},
+			{
+				"name": "description37",
+				"type": "varchar"
+			},
+			{
+				"name": "description38",
+				"type": "varchar"
+			},
+			{
+				"name": "description39",
+				"type": "varchar"
+			},
+			{
+				"name": "description40",
+				"type": "varchar"
+			},
+			{
+				"name": "description41",
+				"type": "varchar"
+			},
+			{
+				"name": "description42",
+				"type": "varchar"
+			},
+			{
+				"name": "description43",
+				"type": "varchar"
+			},
+			{
+				"name": "description44",
+				"type": "varchar"
+			},
+			{
+				"name": "description45",
+				"type": "varchar"
+			},
+			{
+				"name": "description46",
+				"type": "varchar"
+			},
+			{
+				"name": "description47",
+				"type": "varchar"
+			},
+			{
+				"name": "description48",
+				"type": "varchar"
+			},
+			{
+				"name": "description49",
+				"type": "varchar"
+			},
+			{
+				"name": "description50",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Customer2"
+		}
+	}
+}
