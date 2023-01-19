@@ -1,0 +1,474 @@
+{
+	"name": "adfcdc1",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "dbo.Customer",
+						"properties": {
+							"schema": [
+								{
+									"name": "CustomerID",
+									"dataType": "integer"
+								},
+								{
+									"name": "NameStyle",
+									"dataType": "boolean"
+								},
+								{
+									"name": "Title",
+									"dataType": "string"
+								},
+								{
+									"name": "FirstName",
+									"dataType": "string"
+								},
+								{
+									"name": "MiddleName",
+									"dataType": "string"
+								},
+								{
+									"name": "LastName",
+									"dataType": "string"
+								},
+								{
+									"name": "Suffix",
+									"dataType": "string"
+								},
+								{
+									"name": "CompanyName",
+									"dataType": "string"
+								},
+								{
+									"name": "SalesPerson",
+									"dataType": "string"
+								},
+								{
+									"name": "EmailAddress",
+									"dataType": "string"
+								},
+								{
+									"name": "Phone",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordHash",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordSalt",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "Customer"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": true
+								},
+								{
+									"name": "waterMarkColumn",
+									"value": "ModifiedDate"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "TargetAzureDB_LS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "dbo.Customer",
+						"properties": {
+							"schema": [
+								{
+									"name": "CustomerID",
+									"dataType": "integer"
+								},
+								{
+									"name": "NameStyle",
+									"dataType": "boolean"
+								},
+								{
+									"name": "Title",
+									"dataType": "string"
+								},
+								{
+									"name": "FirstName",
+									"dataType": "string"
+								},
+								{
+									"name": "MiddleName",
+									"dataType": "string"
+								},
+								{
+									"name": "LastName",
+									"dataType": "string"
+								},
+								{
+									"name": "Suffix",
+									"dataType": "string"
+								},
+								{
+									"name": "CompanyName",
+									"dataType": "string"
+								},
+								{
+									"name": "SalesPerson",
+									"dataType": "string"
+								},
+								{
+									"name": "EmailAddress",
+									"dataType": "string"
+								},
+								{
+									"name": "Phone",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordHash",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordSalt",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "Customer"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "deletable",
+									"value": false
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": false
+								},
+								{
+									"name": "upsertable",
+									"value": false
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "TargetAzureDB_LS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "dbo.Customer",
+						"sourceEntityName": "dbo.Customer",
+						"sourceConnectionReference": {
+							"connectionName": "TargetAzureDB_LS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "CompanyName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "CompanyName",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "CustomerID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "CustomerID",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "EmailAddress",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "EmailAddress",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "FirstName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "FirstName",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "LastName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "LastName",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "MiddleName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "MiddleName",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ModifiedDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ModifiedDate",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "NameStyle",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "NameStyle",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "PasswordHash",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "PasswordHash",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "PasswordSalt",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "PasswordSalt",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Phone",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Phone",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "rowguid",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "rowguid",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "SalesPerson",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "SalesPerson",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Suffix",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Suffix",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Title",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Title",
+										"entity": "dbo.Customer",
+										"entityConnectionReference": {
+											"connectionName": "TargetAzureDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1
+			},
+			"mode": "Microbatch"
+		}
+	}
+}
