@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_fwi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cdcTaxiSQLDB_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "AzureBlobFSFile"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

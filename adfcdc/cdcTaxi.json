@@ -1,0 +1,980 @@
+{
+	"name": "cdcTaxi",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "cdctaxidata",
+						"properties": {
+							"schema": [
+								{
+									"name": "vendorID",
+									"dataType": "short"
+								},
+								{
+									"name": "lpepPickupDatetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "lpepDropoffDatetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "passengerCount",
+									"dataType": "short"
+								},
+								{
+									"name": "tripDistance",
+									"dataType": "double"
+								},
+								{
+									"name": "puLocationId",
+									"dataType": "short"
+								},
+								{
+									"name": "doLocationId",
+									"dataType": "short"
+								},
+								{
+									"name": "pickupLongitude",
+									"dataType": "double"
+								},
+								{
+									"name": "pickupLatitude",
+									"dataType": "double"
+								},
+								{
+									"name": "dropoffLongitude",
+									"dataType": "double"
+								},
+								{
+									"name": "dropoffLatitude",
+									"dataType": "double"
+								},
+								{
+									"name": "rateCodeID",
+									"dataType": "short"
+								},
+								{
+									"name": "storeAndFwdFlag",
+									"dataType": "boolean"
+								},
+								{
+									"name": "paymentType",
+									"dataType": "short"
+								},
+								{
+									"name": "fareAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "extra",
+									"dataType": "double"
+								},
+								{
+									"name": "mtaTax",
+									"dataType": "double"
+								},
+								{
+									"name": "tipAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "tollsAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "totalAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "tripType",
+									"dataType": "short"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "delimited"
+								},
+								{
+									"name": "container",
+									"value": "cdctaxidata"
+								},
+								{
+									"name": "fileSystem",
+									"value": "cdctaxidata"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": false
+								},
+								{
+									"name": "columnNamesAsHeader",
+									"value": true
+								},
+								{
+									"name": "columnDelimiter",
+									"value": ","
+								},
+								{
+									"name": "escapeChar",
+									"value": "\\\\"
+								},
+								{
+									"name": "quoteChar",
+									"value": "\\\""
+								}
+							]
+						}
+					},
+					{
+						"name": "cdctaxifare",
+						"properties": {
+							"schema": [
+								{
+									"name": "medallion",
+									"dataType": "string"
+								},
+								{
+									"name": " hack_license",
+									"dataType": "string"
+								},
+								{
+									"name": " vendor_id",
+									"dataType": "string"
+								},
+								{
+									"name": " pickup_datetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": " payment_type",
+									"dataType": "string"
+								},
+								{
+									"name": " fare_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " surcharge",
+									"dataType": "double"
+								},
+								{
+									"name": " mta_tax",
+									"dataType": "double"
+								},
+								{
+									"name": " tip_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " tolls_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " total_amount",
+									"dataType": "double"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "delimited"
+								},
+								{
+									"name": "container",
+									"value": "cdctaxifare"
+								},
+								{
+									"name": "fileSystem",
+									"value": "cdctaxifare"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": false
+								},
+								{
+									"name": "columnNamesAsHeader",
+									"value": true
+								},
+								{
+									"name": "columnDelimiter",
+									"value": ","
+								},
+								{
+									"name": "escapeChar",
+									"value": "\\\\"
+								},
+								{
+									"name": "quoteChar",
+									"value": "\\\""
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "cdcTaxiCSV_LS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureBlobFS",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "dbo.TaxiTripData",
+						"properties": {
+							"schema": [
+								{
+									"name": "doLocationId",
+									"dataType": "short"
+								},
+								{
+									"name": "dropoffLatitude",
+									"dataType": "double"
+								},
+								{
+									"name": "dropoffLongitude",
+									"dataType": "double"
+								},
+								{
+									"name": "extra",
+									"dataType": "double"
+								},
+								{
+									"name": "fareAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "lpepDropoffDatetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "lpepPickupDatetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "mtaTax",
+									"dataType": "double"
+								},
+								{
+									"name": "passengerCount",
+									"dataType": "short"
+								},
+								{
+									"name": "paymentType",
+									"dataType": "short"
+								},
+								{
+									"name": "pickupLatitude",
+									"dataType": "double"
+								},
+								{
+									"name": "pickupLongitude",
+									"dataType": "double"
+								},
+								{
+									"name": "puLocationId",
+									"dataType": "short"
+								},
+								{
+									"name": "rateCodeID",
+									"dataType": "short"
+								},
+								{
+									"name": "storeAndFwdFlag",
+									"dataType": "boolean"
+								},
+								{
+									"name": "tipAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "tollsAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "totalAmount",
+									"dataType": "double"
+								},
+								{
+									"name": "tripDistance",
+									"dataType": "double"
+								},
+								{
+									"name": "tripType",
+									"dataType": "short"
+								},
+								{
+									"name": "vendorID",
+									"dataType": "short"
+								},
+								{
+									"name": "tripDuration",
+									"dataType": "long"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "TaxiTripData"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": false
+								},
+								{
+									"name": "deletable",
+									"value": false
+								},
+								{
+									"name": "upsertable",
+									"value": false
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								}
+							]
+						}
+					},
+					{
+						"name": "dbo.TaxiTripFare",
+						"properties": {
+							"schema": [
+								{
+									"name": "medallion",
+									"dataType": "string"
+								},
+								{
+									"name": " hack_license",
+									"dataType": "string"
+								},
+								{
+									"name": " vendor_id",
+									"dataType": "string"
+								},
+								{
+									"name": " pickup_datetime",
+									"dataType": "timestamp"
+								},
+								{
+									"name": " payment_type",
+									"dataType": "string"
+								},
+								{
+									"name": " fare_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " surcharge",
+									"dataType": "double"
+								},
+								{
+									"name": " mta_tax",
+									"dataType": "double"
+								},
+								{
+									"name": " tip_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " tolls_amount",
+									"dataType": "double"
+								},
+								{
+									"name": " total_amount",
+									"dataType": "double"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "TaxiTripFare"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": false
+								},
+								{
+									"name": "deletable",
+									"value": false
+								},
+								{
+									"name": "upsertable",
+									"value": false
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "cdcTaxiSQLDB_LS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "dbo.TaxiTripData",
+						"sourceEntityName": "cdctaxidata",
+						"sourceConnectionReference": {
+							"connectionName": "cdcTaxiCSV_LS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "doLocationId",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "doLocationId",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "dropoffLatitude",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "dropoffLatitude",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "dropoffLongitude",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "dropoffLongitude",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "extra",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "extra",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "fareAmount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "fareAmount",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "lpepDropoffDatetime",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "lpepDropoffDatetime",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "lpepPickupDatetime",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "lpepPickupDatetime",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "mtaTax",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "mtaTax",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "passengerCount",
+									"type": "Derived",
+									"functionName": "",
+									"expression": "iif(passengerCount < 1, toShort(1), passengerCount)",
+									"attributeReferences": [
+										{
+											"name": "passengerCount",
+											"entity": "cdctaxidata",
+											"entityConnectionReference": {
+												"connectionName": "cdcTaxiCSV_LS",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "paymentType",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "paymentType",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "pickupLatitude",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "pickupLatitude",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "pickupLongitude",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "pickupLongitude",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "puLocationId",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "puLocationId",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "rateCodeID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "rateCodeID",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "storeAndFwdFlag",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "storeAndFwdFlag",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "tipAmount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "tipAmount",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "tollsAmount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "tollsAmount",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "totalAmount",
+									"type": "Derived",
+									"functionName": "",
+									"expression": "round(totalAmount,2)",
+									"attributeReferences": [
+										{
+											"name": "totalAmount",
+											"entity": "cdctaxidata",
+											"entityConnectionReference": {
+												"connectionName": "cdcTaxiCSV_LS",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "tripDistance",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "tripDistance",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "tripDuration",
+									"type": "Derived",
+									"functionName": "",
+									"expression": "minus(lpepDropoffDatetime,lpepPickupDatetime)",
+									"attributeReferences": [
+										{
+											"name": "lpepDropoffDatetime",
+											"entity": "cdctaxidata",
+											"entityConnectionReference": {
+												"connectionName": "cdcTaxiCSV_LS",
+												"type": "linkedservicetype"
+											}
+										},
+										{
+											"name": "lpepPickupDatetime",
+											"entity": "cdctaxidata",
+											"entityConnectionReference": {
+												"connectionName": "cdcTaxiCSV_LS",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "tripType",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "tripType",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "vendorID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "vendorID",
+										"entity": "cdctaxidata",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					},
+					{
+						"targetEntityName": "dbo.TaxiTripFare",
+						"sourceEntityName": "cdctaxifare",
+						"sourceConnectionReference": {
+							"connectionName": "cdcTaxiCSV_LS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": " fare_amount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " fare_amount",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " hack_license",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " hack_license",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " mta_tax",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " mta_tax",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " payment_type",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " payment_type",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " pickup_datetime",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " pickup_datetime",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " surcharge",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " surcharge",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " tip_amount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " tip_amount",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " tolls_amount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " tolls_amount",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " total_amount",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " total_amount",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": " vendor_id",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": " vendor_id",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "medallion",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "medallion",
+										"entity": "cdctaxifare",
+										"entityConnectionReference": {
+											"connectionName": "cdcTaxiCSV_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15
+			},
+			"mode": "Microbatch"
+		},
+		"status": "PipelineRunCreated"
+	}
+}

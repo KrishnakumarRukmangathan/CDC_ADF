@@ -1,0 +1,66 @@
+{
+	"name": "ViewAWProduct",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "AzureDataLakeStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ProductDeltaSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "ProductStorageSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "GetTotalRowCount"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ProductID as integer,",
+				"          Name as string,",
+				"          ProductNumber as string,",
+				"          Color as string,",
+				"          StandardCost as decimal(19,4),",
+				"          ListPrice as decimal(19,4),",
+				"          Size as string,",
+				"          Weight as decimal(8,2),",
+				"          ProductCategoryID as integer,",
+				"          ProductModelID as integer,",
+				"          SellStartDate as timestamp,",
+				"          SellEndDate as timestamp,",
+				"          DiscontinuedDate as timestamp,",
+				"          ThumbNailPhoto as binary,",
+				"          ThumbnailPhotoFileName as string,",
+				"          rowguid as string,",
+				"          ModifiedDate as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delta',",
+				"     fileSystem: 'adventureworkscontainer',",
+				"     folderPath: 'cdcProduct') ~> ProductDeltaSource",
+				"ProductDeltaSource aggregate(Count = count(ProductID)) ~> GetTotalRowCount",
+				"GetTotalRowCount sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> ProductStorageSink"
+			]
+		}
+	}
+}

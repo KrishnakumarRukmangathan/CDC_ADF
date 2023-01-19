@@ -1,0 +1,9 @@
+{
+	"name": "cdcTaxiDemo",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "36e0de79-2e8d-4812-a4d4-146490cdb69e",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

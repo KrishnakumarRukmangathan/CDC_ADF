@@ -1,0 +1,980 @@
+{
+	"name": "cdcTestAW",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "SalesLT.Customer",
+						"properties": {
+							"schema": [
+								{
+									"name": "CustomerID",
+									"dataType": "integer"
+								},
+								{
+									"name": "NameStyle",
+									"dataType": "boolean"
+								},
+								{
+									"name": "Title",
+									"dataType": "string"
+								},
+								{
+									"name": "FirstName",
+									"dataType": "string"
+								},
+								{
+									"name": "MiddleName",
+									"dataType": "string"
+								},
+								{
+									"name": "LastName",
+									"dataType": "string"
+								},
+								{
+									"name": "Suffix",
+									"dataType": "string"
+								},
+								{
+									"name": "CompanyName",
+									"dataType": "string"
+								},
+								{
+									"name": "SalesPerson",
+									"dataType": "string"
+								},
+								{
+									"name": "EmailAddress",
+									"dataType": "string"
+								},
+								{
+									"name": "Phone",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordHash",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordSalt",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "SalesLT"
+								},
+								{
+									"name": "tableName",
+									"value": "Customer"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": true
+								},
+								{
+									"name": "waterMarkColumn",
+									"value": "ModifiedDate"
+								}
+							]
+						}
+					},
+					{
+						"name": "SalesLT.Product",
+						"properties": {
+							"schema": [
+								{
+									"name": "ProductID",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "ProductNumber",
+									"dataType": "string"
+								},
+								{
+									"name": "Color",
+									"dataType": "string"
+								},
+								{
+									"name": "StandardCost",
+									"dataType": "decimal(19,4)"
+								},
+								{
+									"name": "ListPrice",
+									"dataType": "decimal(19,4)"
+								},
+								{
+									"name": "Size",
+									"dataType": "string"
+								},
+								{
+									"name": "Weight",
+									"dataType": "decimal(8,2)"
+								},
+								{
+									"name": "ProductCategoryID",
+									"dataType": "integer"
+								},
+								{
+									"name": "ProductModelID",
+									"dataType": "integer"
+								},
+								{
+									"name": "SellStartDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "SellEndDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "DiscontinuedDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "ThumbNailPhoto",
+									"dataType": "binary"
+								},
+								{
+									"name": "ThumbnailPhotoFileName",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "SalesLT"
+								},
+								{
+									"name": "tableName",
+									"value": "Product"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": true
+								},
+								{
+									"name": "waterMarkColumn",
+									"value": "ModifiedDate"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "SourceAzureSQLDB_LS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "adventureworkscontainer/cdcCustomer/SalesLT.Customer",
+						"properties": {
+							"schema": [
+								{
+									"name": "CustomerID",
+									"dataType": "integer"
+								},
+								{
+									"name": "NameStyle",
+									"dataType": "boolean"
+								},
+								{
+									"name": "Title",
+									"dataType": "string"
+								},
+								{
+									"name": "FirstName",
+									"dataType": "string"
+								},
+								{
+									"name": "MiddleName",
+									"dataType": "string"
+								},
+								{
+									"name": "LastName",
+									"dataType": "string"
+								},
+								{
+									"name": "Suffix",
+									"dataType": "string"
+								},
+								{
+									"name": "CompanyName",
+									"dataType": "string"
+								},
+								{
+									"name": "SalesPerson",
+									"dataType": "string"
+								},
+								{
+									"name": "EmailAddress",
+									"dataType": "string"
+								},
+								{
+									"name": "Phone",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordHash",
+									"dataType": "string"
+								},
+								{
+									"name": "PasswordSalt",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "delta"
+								},
+								{
+									"name": "container",
+									"value": "adventureworkscontainer"
+								},
+								{
+									"name": "fileSystem",
+									"value": "adventureworkscontainer"
+								},
+								{
+									"name": "mergeSchema",
+									"value": true
+								},
+								{
+									"name": "autoCompact",
+									"value": true
+								},
+								{
+									"name": "optimizedWrite",
+									"value": true
+								},
+								{
+									"name": "deletable",
+									"value": true
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": true
+								},
+								{
+									"name": "upsertable",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								},
+								{
+									"name": "folderPath",
+									"value": "cdcCustomer/SalesLT.Customer"
+								},
+								{
+									"name": "keys",
+									"value": [
+										"CustomerID"
+									]
+								},
+								{
+									"name": "defaultToUpsert",
+									"value": true
+								}
+							]
+						}
+					},
+					{
+						"name": "adventureworkscontainer/cdcProduct",
+						"properties": {
+							"schema": [
+								{
+									"name": "ProductID",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "ProductNumber",
+									"dataType": "string"
+								},
+								{
+									"name": "Color",
+									"dataType": "string"
+								},
+								{
+									"name": "StandardCost",
+									"dataType": "decimal(19,4)"
+								},
+								{
+									"name": "ListPrice",
+									"dataType": "decimal(19,4)"
+								},
+								{
+									"name": "Size",
+									"dataType": "string"
+								},
+								{
+									"name": "Weight",
+									"dataType": "decimal(8,2)"
+								},
+								{
+									"name": "ProductCategoryID",
+									"dataType": "integer"
+								},
+								{
+									"name": "ProductModelID",
+									"dataType": "integer"
+								},
+								{
+									"name": "SellStartDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "SellEndDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "DiscontinuedDate",
+									"dataType": "timestamp"
+								},
+								{
+									"name": "ThumbNailPhoto",
+									"dataType": "binary"
+								},
+								{
+									"name": "ThumbnailPhotoFileName",
+									"dataType": "string"
+								},
+								{
+									"name": "rowguid",
+									"dataType": "string"
+								},
+								{
+									"name": "ModifiedDate",
+									"dataType": "timestamp"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "delta"
+								},
+								{
+									"name": "container",
+									"value": "adventureworkscontainer"
+								},
+								{
+									"name": "fileSystem",
+									"value": "adventureworkscontainer"
+								},
+								{
+									"name": "mergeSchema",
+									"value": true
+								},
+								{
+									"name": "autoCompact",
+									"value": true
+								},
+								{
+									"name": "optimizedWrite",
+									"value": true
+								},
+								{
+									"name": "deletable",
+									"value": true
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": true
+								},
+								{
+									"name": "upsertable",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								},
+								{
+									"name": "folderPath",
+									"value": "cdcProduct"
+								},
+								{
+									"name": "keys",
+									"value": [
+										"ProductID"
+									]
+								},
+								{
+									"name": "defaultToUpsert",
+									"value": true
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureDataLakeStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureBlobFS",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "adventureworkscontainer/cdcCustomer/SalesLT.Customer",
+						"sourceEntityName": "SalesLT.Customer",
+						"sourceConnectionReference": {
+							"connectionName": "SourceAzureSQLDB_LS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "CompanyName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "CompanyName",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "CustomerID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "CustomerID",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "EmailAddress",
+									"type": "Derived",
+									"functionName": "lower",
+									"expression": "lower(EmailAddress)",
+									"attributeReferences": [
+										{
+											"name": "EmailAddress",
+											"entity": "SalesLT.Customer",
+											"entityConnectionReference": {
+												"connectionName": "SourceAzureSQLDB_LS",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "FirstName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "FirstName",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "LastName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "LastName",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "MiddleName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "MiddleName",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ModifiedDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ModifiedDate",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "NameStyle",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "NameStyle",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "PasswordHash",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "PasswordHash",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "PasswordSalt",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "PasswordSalt",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Phone",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Phone",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "rowguid",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "rowguid",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "SalesPerson",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "SalesPerson",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Suffix",
+									"type": "Derived",
+									"functionName": "",
+									"expression": "iifNull(Suffix,'NA')",
+									"attributeReferences": [
+										{
+											"name": "Suffix",
+											"entity": "SalesLT.Customer",
+											"entityConnectionReference": {
+												"connectionName": "SourceAzureSQLDB_LS",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "Title",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Title",
+										"entity": "SalesLT.Customer",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					},
+					{
+						"targetEntityName": "adventureworkscontainer/cdcProduct",
+						"sourceEntityName": "SalesLT.Product",
+						"sourceConnectionReference": {
+							"connectionName": "SourceAzureSQLDB_LS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "Color",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Color",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "DiscontinuedDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "DiscontinuedDate",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ListPrice",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ListPrice",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ModifiedDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ModifiedDate",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Name",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Name",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ProductCategoryID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ProductCategoryID",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ProductID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ProductID",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ProductModelID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ProductModelID",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ProductNumber",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ProductNumber",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "rowguid",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "rowguid",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "SellEndDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "SellEndDate",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "SellStartDate",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "SellStartDate",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Size",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Size",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "StandardCost",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "StandardCost",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ThumbNailPhoto",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ThumbNailPhoto",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "ThumbnailPhotoFileName",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ThumbnailPhotoFileName",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Weight",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Weight",
+										"entity": "SalesLT.Product",
+										"entityConnectionReference": {
+											"connectionName": "SourceAzureSQLDB_LS",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15
+			},
+			"mode": "Microbatch"
+		},
+		"status": "Stopped"
+	}
+}

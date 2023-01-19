@@ -10,125 +10,16 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Hr5m.csv",
-				"fileSystem": "data"
+				"fileName": "Customer.csv",
+				"folderPath": "customer",
+				"fileSystem": "awoutput"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			}
-		]
-	}
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
